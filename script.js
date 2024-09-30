@@ -1,5 +1,5 @@
 var typed = new Typed(".auto-type", {
-    strings: ["WEB DEVELOPER", "APP DEVELOPER", "DATA ANALYST"],
+    strings: ["WEB DEVELOPER", "APP DEVELOPER", "WEB DESINER"],
     typeSpeed: 100,
     backSpeed: 100,
     loop: true
@@ -41,7 +41,7 @@ let calcScrollValue = () => {
         document.documentElement.scrollTop = 0;
     });
     
-    scrollProgress.style.background = `conic-gradient(#03cc65 ${scrollValue}%, #d7d7d7 ${scrollValue}%)`;
+    scrollProgress.style.background = `conic-gradient(#BFBDBD ${scrollValue}%,#363635 ${scrollValue}%)`;
 };
 
 window.onscroll = calcScrollValue;
@@ -80,4 +80,20 @@ function toggleNavbar() {
     const navbar = document.querySelector('.navbar');
     navbar.classList.toggle('active');
   }
+
   
+
+
+  document.getElementById('showPopupBtn').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'flex';
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('popup').style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+    if (event.target == document.getElementById('popup')) {
+        document.getElementById('popup').style.display = 'none';
+    }
+});

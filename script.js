@@ -1,9 +1,13 @@
+//   auto typing txt  //
 var typed = new Typed(".auto-type", {
     strings: ["WEB DEVELOPER", "APP DEVELOPER", "WEB DESINER"],
     typeSpeed: 100,
     backSpeed: 100,
     loop: true
   });
+//   auto typing txt  //
+
+// scroll to top //
 window.onscroll = () => {
     sections.forEach(sec => {
         let top = window.scrollY;
@@ -19,11 +23,9 @@ window.onscroll = () => {
         };
     });
 };
+// scroll to top //
 
-
-
-
-
+// active navbar //
 let calcScrollValue = () => {
     let scrollProgress = document.getElementById("progress");
     let progressValue = document.getElementById("progress-value");
@@ -83,17 +85,37 @@ function toggleNavbar() {
 
   
 
+// responsive navbar //
+const menuToggle = document.querySelector('.menu-toggle');
+const navbar = document.querySelector('.navbar');
+const navLinks = document.querySelector('.nav-links');
 
-  document.getElementById('showPopupBtn').addEventListener('click', function() {
+menuToggle.addEventListener('click', () => {
+  menuToggle.classList.toggle('active');
+  navbar.classList.toggle('active');
+  navLinks.style.visibility = navLinks.style.visibility === 'visible' ? 'hidden' : 'visible';
+});
+
+
+
+// Show popup when the "Download CV" button is clicked
+document.getElementById('showPopupBtn').addEventListener('click', function(event) {
+    event.preventDefault();  // Prevent default anchor behavior
     document.getElementById('popup').style.display = 'flex';
 });
 
+// Close the popup when the close button is clicked
 document.querySelector('.close-btn').addEventListener('click', function() {
     document.getElementById('popup').style.display = 'none';
 });
 
+// Close the popup when clicking outside the popup content
 window.addEventListener('click', function(event) {
     if (event.target == document.getElementById('popup')) {
         document.getElementById('popup').style.display = 'none';
     }
 });
+
+
+
+

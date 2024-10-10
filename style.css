@@ -59,144 +59,174 @@ html {
 /* Base styles */
 
 
+/* Main navbar styling for desktop and larger screens */
+/* Main navbar styling */
 .navbar {
-    background-color: rgb(17, 17, 17);
-    padding: 25px 35px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    box-sizing: border-box;}
-
-
-.navbar .logo a {
-    font-size: 34px;
-    color: white;
-    text-decoration: none;
+  background-color: rgb(17, 17, 17);
+  padding: 30px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+ box-sizing: border-box;
 }
 
-.logo a {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
+.navbar .logo a {
+  font-size: 34px;
+  color: white;
+  text-decoration: none;
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links li {
-    margin: 0 25px;
+  margin: 0 25px;
 }
 
 .nav-links li a {
-    color: rgb(179, 176, 176);
-    font-size: 20px;
-    font-weight: 400;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: rgb(179, 176, 176);
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 25px;
+}
+
+.nav-links li a {
+  color: rgb(179, 176, 176);
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .nav-links a {
-    position: relative;
-    color: rgb(179, 176, 176);
-    font-size: 20px;
-    font-weight: 400;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  position: relative;
+  color: rgb(179, 176, 176);
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .nav-links a::after {
-    content: "";
-    position: absolute;
-    background-color: #575657;
-    height: 3px;
-    width: 0%;
-    left: 0;
-    bottom: -5px;
-    transition: width 0.3s ease-in-out;
+  content: "";
+  position: absolute;
+  background-color: #575657;
+  height: 3px;
+  width: 0%;
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease-in-out;
 }
 
 .nav-links li a:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .nav-links li a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
-.hire-me {
-    background-color: rgb(17, 17, 17);
-    border: 2px solid hwb(0 56% 44% / 0.943);
-    border-radius: 25px;
-    padding: 10px 35px;
-    transition: background-color 0.3s ease;
+/* Hire Me button styles */
+/* Hire Me button styles */
+.hire-me a,
+.mobile-hire-me a {
+  color: white;
+  font-size: 25px;
+  text-decoration: none;
+  background-color: rgb(17, 17, 17);
+  border: 2px solid hwb(0 56% 44% / 0.943);
+  border-radius: 25px;
+  padding: 10px 35px;
+  margin-left: 300px;
+  transition: background-color 0.2s linear, color 0.2s linear; /* Reduced time and linear transition */
 }
 
-.hire-me a {
-    color: white;
-    font-size: 19px;
-    text-decoration: none;
+.hire-me a:hover,
+.mobile-hire-me a:hover {
+  background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: background 0.2s linear, -webkit-text-fill-color 0.2s linear; /* Adjust hover animation */
 }
+  
 
-.hire-me:hover {
-    background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* Responsive styles */
+/* Responsive styles for mobile */
 .menu-toggle {
-    display: none;
+  display: none;
 }
 
 .menu-icon {
-    display: none;
-    font-size: 30px;
-    cursor: pointer;
-    color: white;
-}
-.mobile-hire-me{
-  display: block;
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 100px;
-        left: 0;
-        background-color: rgb(28, 28, 28);
-        padding: 0;
-        transition: max-height 0.3s ease-in-out; /* Smooth transition for dropdown */
-        max-height: 0;
-        overflow: hidden;
-    }
-
-    .nav-links li {
-        margin: 15px 0;
-        text-align: center;
-    }
-
-    .menu-toggle:checked + .menu-icon + .nav-links {
-        display: flex;
-        max-height: 500px; /* Adjust as needed */
-    }
-
-    .menu-icon {
-        display: block;
-    }
-
-    .hire-me {
-        display: none;
-    }
-
+  .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      background-color: rgb(28, 28, 28);
+      padding: 0;
+      transition: max-height 0.3s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
   }
+
+  .nav-links li {
+      margin: 15px 0;
+      text-align: center;
+  }
+
+  .menu-toggle:checked + .menu-icon + .nav-links {
+      display: flex;
+      max-height: 500px;
+  }
+
+  .menu-icon {
+      display: block;
+  }
+
+  /* Hide the desktop version of the 'Hire Me' button */
+  .hire-me {
+      display: none;
+  }
+
+  /* Display 'Hire Me' button in the mobile menu */
+  .mobile-hire-me {
+      display: block;
+      text-align: center;
+  }
+
+  .mobile-hire-me a {
+      display: inline-block;
+      padding: 10px 35px;
+      font-size: 18px;
+      background-color: rgb(17, 17, 17);
+  }
+}
+
+
 /* Popup Modal Styles */
 .popup {
   display: none;
@@ -478,9 +508,11 @@ html {
   height: 75px;
   margin: 0 40px;
   flex-shrink: 0;
-  /* Ensures the images don't shrink */
+  transition: transform 0.3s;
 }
-
+.logos-slide img:hover {
+  transform: scale(1.2);
+}
 .logos:before,
 .logos:after {
   position: absolute;
@@ -574,7 +606,7 @@ html {
 
 .about-section .about-text .buttons {
   display: flex;
-  gap: 15px;
+  gap:15px;
   margin-top: 20px;
  
 }
@@ -584,15 +616,15 @@ html {
   padding: 10px 20px;
   border-radius: 10px;
   color: #fff;
-  
+
   font-weight: lighter;
   transition: background-color 0.3s;
 }
 
 .about-section .about-text .buttons .hire-btn {
   background-color: #151414;
-  border: 1px ;
-  
+  border: 1px solid #070707;
+
 }
 
 .about-section .about-text .buttons .hire-btn:hover {
@@ -602,16 +634,7 @@ html {
   border: 1px solid hwb(0 56% 44% / 0.943);
 }
 
-.about-section .about-text .buttons .dark-btn {
-  background: #151414;
-}
 
-.about-section .about-text .buttons .dark-btn:hover {
-  background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  border: 1px solid hwb(0 56% 44% / 0.943);
-}
 
 .gradient-text {
   color: white;
@@ -623,6 +646,26 @@ html {
   color: rgb(53, 52, 52);
   font-weight: 500;
 }
+/* Button Styles */
+.cv-download-btn {
+  color: white;
+  text-decoration: none;
+  background-color: rgb(17, 17, 17);
+   border: 1px solid #070707;
+  border-radius: 25px;
+  padding: 10px 35px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.cv-download-btn:hover {
+  background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid hwb(0 56% 44% / 0.943);
+}
+/* Popup Styles */
+
 
 /* about ending */
 
@@ -953,12 +996,14 @@ html {
 @media (max-width: 768px) { /* For mobile screens */
   .container {
     flex-direction: column; /* Stack items vertically on mobile */
-    width:100% ; /* Full width for mobile */
+    width: 350px; /* Full width for mobile */
+    padding: 0 10px; /* Add some padding for mobile view */
   }
 
   .card {
     flex: 1 1 100%; /* Make cards full width on mobile */
     margin-right: 0; /* No margin between cards */
+    width: 100%; /* Ensure cards take up full width on mobile */
   }
 
   .container h2 {

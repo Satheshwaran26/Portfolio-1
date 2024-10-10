@@ -17,24 +17,25 @@
 <body>
   <body>
   
-      <header class="navbar">
-        <div class="logo">
-            <a href="#"><span>&lt;</span>Portfolio/&gt;</a>
-        </div>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">&#9776;</label>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skill">Skills</a></li>
-            <li><a href="#project">Projects</a></li>
-            <li><a href="#education">Education</a></li>
-          
-        </ul>
-        <div class="hire-me" >
-            <a href="#" id="showPopupBtn" class="btn">Download CV</a>
-        </div>
-    </header>
+    <header class="navbar">
+      <div class="logo">
+          <a href="#"><span>&lt;</span>Portfolio/&gt;</a>
+      </div>
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skill">Skills</a></li>
+          <li><a href="#project">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <!-- Add the 'Hire Me' button inside the dropdown menu -->
+          <li class="mobile-hire-me">
+              <a href="#" id="showPopupBtn" class="btn">Download CV</a>
+          </li>
+      </ul>
+  </header>
+  
     
     <!-- Popup Modal -->
     <div id="popup" class="popup">
@@ -46,9 +47,6 @@
             <a href="path_to_your_cv.pdf" download="CV.pdf" class="btn">Download CV</a>
         </div>
     </div>
-    
-
-    <div class="corner-blur"></div>
     <!--  -->
     <section class="home-section" id="home">
       <div class="content">
@@ -155,20 +153,13 @@
           <!-- Buttons Section -->
           <div class="buttons">
             <a href="#" class="hire-btn">Hire Me</a>
-          <a href="" id="showPopupBtn" class="dark-btn">Download CV</a>
+            <a href="#" class="cv-download-btn">Download CV</a>
           </div>
         </div>
       </div>
     </section>
-    <div id="popup" class="popup">
-      <div class="popup-content">
-          <span class="close-btn">&times;</span>
-          <h1>Download CV</h1>
-          <h2>Are you sure you want to download the CV?</h2>
-          <p>Click below to download the CV.</p>
-          <a href="" class="dark-btn">Download CV</a>
-      </div>
-  </div>
+
+
   <!-- about page ending -->
   <!-- service page starting -->
   <section class="services" id="Services">

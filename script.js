@@ -85,16 +85,7 @@ function toggleNavbar() {
 
   
 
-// responsive navbar //
-const menuToggle = document.querySelector('.menu-toggle');
-const navbar = document.querySelector('.navbar');
-const navLinks = document.querySelector('.nav-links');
 
-menuToggle.addEventListener('click', () => {
-  menuToggle.classList.toggle('active');
-  navbar.classList.toggle('active');
-  navLinks.style.visibility = navLinks.style.visibility === 'visible' ? 'hidden' : 'visible';
-});
 
 
 
@@ -116,6 +107,5 @@ window.addEventListener('click', function(event) {
     }
 });
 
-
-
+// 2 nd popup ////
 

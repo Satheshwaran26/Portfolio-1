@@ -161,6 +161,100 @@
 
 
   <!-- about page ending -->
+   <!-- skill -->
+   <section class="skills-section">
+    <h1>My Skills</h1>
+    <div class="skill-container">
+        <div class="skill-card">
+            <h2>Frontend Development</h2>
+            <ul>
+                <li class="hover">
+                    <img src="./assets/html (1).png" alt="HTML">
+                    <span>HTML5</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/css.png" alt="CSS3">
+                    <span>CSS3</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/javascript (1).png" alt="js">
+                    <span>JavaScript</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/bootstrap.png" alt="Bootstarp">
+                    <span>Bootstarp</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/tailwind.png" alt="Tailwind css">
+                    <span>Tailwind CSS</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/figma (1).png" alt="Figma">
+                    <span>Figma</span>
+                </li>
+            </ul>
+        </div>
+        <div class="skill-card">
+            <h2>Backend Development</h2>
+            <ul>
+                <li class="hover">
+                    <img src="./assets/mysql.png" alt="Mysql">
+                    <span>MySql</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/python (1).png" alt="python">
+                    <span>Python</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/nodejs.png" alt="nodejs">
+                    <span>Node JS</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/exptress-removebg-preview.png" alt="express js">
+                    <span>Express JS</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/e_js-removebg-preview.png" alt="Email js">
+                    <span>Email JS</span>
+                </li>
+                  <li class="hover">
+                    <img src="./assets/firebase.png" alt="Email js">
+                    <span>Fierbase</span>
+                </li>
+            </ul>
+        </div>
+        <div class="skill-card">
+            <h2>Others.</h2>
+            <ul >
+                <li class="hover">
+                    <img src="./assets/canva.png" alt="Canva">
+                    <span>Canva</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/net-removebg-preview.png" alt="netlify">
+                    <span>Netlify</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/vercel.png" alt="Vercel">
+                    <span>Vercel</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/visual-studio-code.png" alt="VS code">
+                    <span>VS Code</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/git.png" alt="Git">
+                    <span>Git</span>
+                </li>
+                <li class="hover">
+                    <img src="./assets/github.png" alt="GitHub">
+                    <span>GitHub</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+       <!-- skill -->
   <!-- service page starting -->
   <section class="services" id="Services">
     <h2> My Services</h2>
@@ -202,8 +296,10 @@
   <!-- Service Page Ending -->
  <!--edu exp section -->
   <section class="container" id="Education">
-    <div class="experience">
-      <h2><i class="fa-solid fa-graduation-cap fa-lg"></i> My Experience</h2>
+    
+      <div class="section experience">
+        <h2><i class="icon"></i> My Experience</h2>
+
       <div class="card">
         <h3>2022 - Present</h3>
         <p class="title">LEAD DEVELOPER</p>
@@ -225,8 +321,8 @@
         <p>Theme Junction, Bursa</p>
       </div>
     </div>
-    <div class="education">
-      <h2><i class="fa-solid fa-award fa-lg"></i></i> My Education</h2>
+     <div class="section education">
+    <h2><i class="icon"></i> My Education</h2>
       <div class="card">
         <h3>2020 - 2023</h3>
         <p class="title">PROGRAMMING COURSE</p>
@@ -263,7 +359,7 @@
             <span class="tag">MVC</span>
             <span class="tag">Development</span>
           </div>
-          <a href="#" class="external-link"><i class="fa-duotone fa-solid fa-arrow-right"></i></a>
+          <a href="#" class="external-link"><i class="fa-solid fa-square-up-right"></i></a>
         </div>
       </div>
 
@@ -323,7 +419,7 @@
             <span class="tag">API</span>
             <span class="tag">Development</span>
           </div>
-          <a href="#" class="external-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+          <a href="#" class="external-link"><i class="fa-solid fa-square-up-right"></i></a>
         </div>
       </div>
     </div>
@@ -334,51 +430,46 @@
   <section class="contact-section" id="Contact">
     <h1>Contact Me</h1>
     <div class="contact-container">
-      <div class="form-container">
-        <h2>Let's work together!</h2>
-        <p>I design and code beautifully simple things, and I love what I do. Just simple like that!</p>
-        <form action="#" method="post">
-          <div class="form-row">
-            <input type="text" name="first_name" placeholder="First name" required>
-            <input type="text" name="last_name" placeholder="Last name" required>
-          </div>
-          <div class="form-row">
-            <input type="email" name="email" placeholder="Email address" required>
-            <input type="tel" name="phone" placeholder="Phone number" required>
-          </div>
-          <div class="form-row" id="form">
-            <select name="option" required>
-              <option value="" disabled selected>—Please choose an option—</option>
-              <option value="design">Web Design</option>
-              <option value="development">Development</option>
-              <option value="consulting">Consulting</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <textarea name="message" rows="10" placeholder="Message"></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Message</button>
-        </form>
-      </div>
-      <div class="contact-details">
-        <div class="detail-item">
-          <i class="fa-solid fa-phone"></i>
-
-          <span>+91 8754-102-493</span>
+        <div class="form-container">
+            <h2>Let's work together!</h2>
+            <p>I design and code beautifully simple things, and I love what I do. Just simple like that!</p>
+            <form action="#" method="post">
+                <div class="form-row">
+                    <input type="text" name="first_name" placeholder="Enter the Name" required>   
+                </div>
+                <div class="form-row">
+                    <input type="email" name="email" placeholder="Email address" required>
+                </div>
+                <div class="form-row">
+                    <select name="option" required>
+                        <option value="" disabled selected>—Please choose an option—</option>
+                        <option value="design">Web Design</option>
+                        <option value="development">Development</option>
+                        <option value="consulting">Consulting</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <textarea name="message" rows="10" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
         </div>
-        <div class="detail-item">
-          <i class="fa-regular fa-envelope"></i>
-
-          <span>sathesh@mail.com</span>
+        <div class="contact-details">
+            <div class="detail-item">
+                <i class="fa-solid fa-phone"></i>
+                <span>+91 8754-102-493</span>
+            </div>
+            <div class="detail-item">
+                <i class="fa-regular fa-envelope"></i>
+                <span>satheswaran6677@gmail.com</span>
+            </div>
+            <div class="detail-item">
+                <i class="fa-brands fa-github"></i>
+                <span>Satheshwarn26</span>
+            </div>
         </div>
-        <div class="detail-item">
-          <i class="fa-brands fa-github" style="color: #ffffff;"></i>
-
-          <span>Warne Park Street Pine, FL 33157, New York</span>
-        </div>
-      </div>
     </div>
-  </section>
+</section>
 
   <!--contact section -->
 
@@ -394,10 +485,10 @@
     </div>
 
     <div class="footer-icons">
-      <a href="https://fiverr.com" target="_blank"><img src="./assets/icons8-linkedin-50.png" alt="Fiverr"></a>
-      <a href="https://github.com" target="_blank"><img src="./assets/icons8-instagram-50.png" alt="GitHub"></a>
-      <a href="https://linkedin.com" target="_blank"><img src="./assets/icons8-github-30.png" alt="LinkedIn"></a>
-      <a href="https://youtube.com" target="_blank"><img src="./assets/icons8-linkedin-50.png" alt="YouTube"></a>
+      <a href="https://fiverr.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://github.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
     </div>
 
     <div class="footer-copyright">

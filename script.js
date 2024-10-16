@@ -1,7 +1,7 @@
 //   auto typing txt  //
 var typed = new Typed(".auto-type", {
-    strings: ["WEB DEVELOPER", "APP DEVELOPER", "WEB DESINER"],
-    typeSpeed: 100,
+    strings: ["Web Developer", "UI/UX Designer", "Front-end-Dev"],
+    typeSpeed: 180,
     backSpeed: 100,
     loop: true
   });
@@ -109,3 +109,28 @@ window.addEventListener('click', function(event) {
 
 // 2 nd popup ////
 
+// Get the modal element
+const modal = document.getElementById("popup-modal");
+
+// Get the open button
+const openModal = document.getElementById("trigger-popup");
+
+// Get the close button
+const closeModal = document.getElementById("close-modal");
+
+// Show modal
+openModal.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+// Hide modal
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Hide modal when clicking outside of it
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+});

@@ -15,6 +15,7 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
 /* scroll to top */
 #progress {
   position: fixed;
@@ -36,7 +37,7 @@ html {
   width: calc(100% - 10px);
   background-color: #131212;
   border-radius: 50%;
-  display: grid;
+
   place-items: center;
   font-size: 35px;
   color: #7c7c7c;
@@ -48,6 +49,7 @@ html {
 /* scroll to top */
 
 /*  navbar starting */
+/* Navbar styling */
 .navbar {
   background-color: rgb(17, 17, 17);
   padding: 30px 35px;
@@ -60,10 +62,14 @@ html {
 
 .navbar .logo a {
   font-size: 34px;
-  color: white;
+  color:rgb(120, 120, 120);
   text-decoration: none;
+  font-weight: 600;
 }
-
+.navbar .logo a span{
+  font-weight: lighter;
+  color:silver;
+}
 .nav-links {
   display: flex;
   list-style: none;
@@ -73,33 +79,6 @@ html {
 
 .nav-links li {
   margin: 0 25px;
-}
-
-.nav-links li a {
-  color: rgb(179, 176, 176);
-  font-size: 20px;
-  font-weight: 400;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links li {
-  margin: 0 25px;
-}
-
-.nav-links li a {
-  color: rgb(179, 176, 176);
-  font-size: 20px;
-  font-weight: 400;
-  text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 .nav-links a {
@@ -114,46 +93,46 @@ html {
 .nav-links a::after {
   content: "";
   position: absolute;
-  background-color: #575657;
-  height: 3px;
-  width: 0%;
-  left: 0;
+  width: 0;
+  height: 2px;
   bottom: -5px;
-  transition: width 0.3s ease-in-out;
+  left: 0;
+  background-color: gray;
+  transition: width 0.3s ease;
 }
 
-.nav-links li a:hover {
-  color: #ffffff;
-}
-
-.nav-links li a:hover::after {
+.ani a:hover::after {
   width: 100%;
 }
 
-.hire-me a,
+.ani a:hover {
+  color: #ffffff;
+}
+
+/* Mobile Hire Me Button remains unchanged */
 .mobile-hire-me a {
   color: white;
-  font-size: 25px;
+  font-size: 18px;
   text-decoration: none;
   background-color: rgb(17, 17, 17);
   border: 2px solid hwb(0 56% 44% / 0.943);
   border-radius: 25px;
-  padding: 10px 35px;
+  padding: 12px 38px;
   margin-left: 300px;
   transition: background-color 0.2s linear, color 0.2s linear;
 }
-
-.hire-me a:hover,
+.mobile-hire-me a i{
+  font-size: 1.3em;
+  padding-right: 8px;
+}
 .mobile-hire-me a:hover {
   background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background 0.2s linear, -webkit-text-fill-color 0.2s linear;
-  /* Adjust hover animation */
 }
 
-
-/* Responsive styles for mobile */
+/* Responsive Navbar for Mobile */
 .menu-toggle {
   display: none;
 }
@@ -164,8 +143,8 @@ html {
   cursor: pointer;
   color: white;
 }
-/* res navbar */
 
+/* Responsive Navbar Dropdown */
 
 /* Popup Modal Styles */
 .popup {
@@ -326,8 +305,6 @@ html {
 .profile-picture img:hover {
   filter: grayscale(50%);
 }
-
-
 @keyframes slide {
   from {
     transform: translateX(0);
@@ -341,7 +318,7 @@ html {
 .logos {
   overflow: hidden;
   padding-top: 30px;
-  padding-bottom: 35px;
+  padding-bottom: 40px;
   background: rgb(17, 17, 17);
   position: relative;
   width: 100%;
@@ -357,7 +334,7 @@ html {
 }
 
 .logos-slide img {
-  height: 75px;
+  height: 78px;
   margin: 0 40px;
   flex-shrink: 0;
   transition: transform 0.3s;
@@ -371,7 +348,7 @@ html {
 .logos:after {
   position: absolute;
   top: 0;
-  width: 50px;
+  width: 60px;
   height: 150px;
   content: "";
   z-index: 2;
@@ -390,6 +367,8 @@ html {
 .logos:hover .logos-slide {
   animation-play-state: paused;
 }
+
+/* Responsive styles for mobile */
 
 /* about page */
 .about-section {
@@ -491,7 +470,16 @@ html {
   -webkit-text-fill-color: transparent;
   border: 1px solid hwb(0 56% 44% / 0.943);
 }
-
+.cv-download-btn{
+  background-color: #151414;
+  border: 1px solid #070707; 
+}
+.about-section .about-text .buttons .cv-download-btn:hover{
+  background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border: 1px solid hwb(0 56% 44% / 0.943); 
+}
 
 
 .gradient-text {
@@ -515,7 +503,7 @@ html {
 .skills-section
 h1 {
    font-size: 3rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   background: linear-gradient(110deg, rgb(35, 35, 36) 40%, rgba(255, 255, 255, 1) 86%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -529,15 +517,14 @@ h1 {
 }
 
 .hover {
-    background-color: black;
-    transition: 0.6s ease-in-out;
+  background-color: black;
+  transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
 }
 
 .hover:hover {
-    background-color: #2F2F2F;
-    transform: scale(1.1);
+  background-color: #2F2F2F;
+  transform: scale(1.1);
 }
-
 .skill-card {
     background-color:#070707 ;
     border-radius: 10px;
@@ -551,6 +538,8 @@ h1 {
     text-align: center;
     margin-bottom: 30px;
     margin-top: 0;
+    font-weight: lighter;
+    font-size: 2;
 }
 
 .skill-card ul {
@@ -559,24 +548,27 @@ h1 {
 }
 
 .skill-card ul li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-    padding: 10px;
-    background-color: #0000;
-    border-radius: 30px;
-    border: 2px solid #2F2F2F;
-    transition: background-color 0.3s ease;
-    width: 400px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #0000;
+  border-radius: 30px;
+  border: 2px solid #2F2F2F;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow s ease;
+  width: 400px;
 }
 
 .skill-card ul li:hover {
-    background-color: #000000;
+  background-color: #151414;
+  border-color: #444444;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .skill-card ul li img {
     width: 40px;
     height: 40px;
+    padding-left: 10px;
     margin-right: 15px;
 }
 
@@ -588,21 +580,7 @@ li span {
 }
 
 /* Responsive Design */
-@media (max-width: 480px) {
-    .skill-container {
-        flex-direction: column;
-        align-items: center;
-    }
 
-    .skill-card {
-        width:auto;
-       margin-right: 0;
-       margin-left: 30px; 
-    }
-    .skill-card ul li{
-      width: 300px;
-    }
-}
 /* Base styles for the services section */
 .services {
   display: flex;
@@ -612,7 +590,7 @@ li span {
   text-align: center;
   padding: 2rem;
   color: white;
-  margin-top: 80px;
+
 }
 
 .services h2 {
@@ -745,57 +723,16 @@ li span {
 
 /* Responsive adjustments */
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .service-cards {
-    flex-direction: column; /* Stack cards vertically */
-    align-items: center; /* Center align cards */
-  }
 
-  .service-card {
-    width: auto; /* Full width on smaller screens */
-    height: auto; /* Auto height to fit content */
-    padding: 2rem; /* Adjust padding */
-    margin: 1rem 0; /* Adjust margin */
-    margin-right: 0; /* Remove right margin */
-  }
-
-  .services h2 {
-    font-size: 2rem; /* Reduce font size */
-  }
-
-  .services p {
-    font-size: 1rem; /* Reduce font size */
-  }
-
-  .service-card .icon {
-    font-size: 2.5rem; /* Reduce icon size */
-  }
-
-  .service-card h3 {
-    font-size: 1.2rem; /* Reduce heading size */
-  }
-
-  .service-card p {
-    font-size: 0.9rem; /* Reduce paragraph size */
-  }
-
-  .service-card .read-more {
-    width: 150px; /* Set button width */
-    margin: 0 auto; /* Center button */
-    display: flex;
-    justify-content: center;
-  }
-}.portfolio-section {
+.portfolio-section {
   padding: 4rem;
   text-align: center;
 }
 
 .portfolio-section h1 {
   font-size: 3rem;
-  margin-bottom: 2rem;
-  background: linear-gradient(110deg, rgb(35, 35, 36) 40%, rgba(255, 255, 255, 1) 86%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ color: rgb(148, 147, 147);
+ margin-bottom: 40px;
 }
 
 .portfolio-grid {
@@ -889,71 +826,6 @@ li span {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Make the layout responsive */
-@media (max-width: 768px) {
-  .portfolio-section {
-    padding: 2rem;
-  }
-
-  .portfolio-section h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .portfolio-item {
-    width: 100%;
-    max-width: none;
-  }
-
-  .portfolio-content h2 {
-    font-size: 1rem;
-  }
-
-  .tag {
-    font-size: 0.8rem;
-  }
-
-  .external-link i {
-    font-size: 1.5rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .portfolio-section {
-    padding: 1rem;
-  }
-
-  .portfolio-section h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .portfolio-item {
-    width:auto;
-    max-width: none;
-  }
-
-  .portfolio-content h2 {
-    font-size: 0.9rem;
-  }
-
-  .tag {
-    font-size: 0.7rem;
-  }
-
-  .external-link i {
-    font-size: 1.5rem;
-  }
-}
 
 .container {
   display: flex;
@@ -1011,60 +883,41 @@ width: 550px;
   color: #999;
 }
 
-/* Media Queries */
-@media (max-width: 1024px) {
-  .container {
-    flex-direction: column;
-  }
 
-  .section {
-    width: 100%;
-  }
-}
 
-@media (max-width: 480px) {
-  .container {
-    padding: 10px;
-  }
-
-  .section h2 {
-    font-size: 1.5em;
-  }
-  .card {
-    width: auto;
-  }
-  .card h3 {
-    font-size: 1em;
-  }
-
-  .title {
-    font-size: 1.2em;
-  }
-}
 
 /*  *//* General Contact Section Styling */
 .contact-section {
   width: 80%;
-  margin: 100px auto;
+  margin: 70px 60px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
-
 .contact-section h1 {
   font-size: 3rem;
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+  margin-top: 0;
   background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
+.contact-section .emoji {
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: initial;
+  background: none;
+  color: inherit;
+}
 /* Contact Container Styling */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: space-around;
+  
 }
 
 /* Form Container Styling */
@@ -1075,7 +928,7 @@ width: 550px;
   width: 40%;
   box-sizing: border-box;
   margin-right:50px;
-  margin-left: 180px;
+  margin-left: 150px;
 }
 
 .form-container h2 {
@@ -1101,7 +954,7 @@ input,
 select,
 textarea {
   width: 100%;
-  padding: 15px;
+  padding: 20px;
   background-color: #181818;
   border: none;
   border-radius: 8px;
@@ -1134,7 +987,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 65px;
+  
 }
 
 .detail-item {
@@ -1144,59 +997,21 @@ textarea {
 }
 
 .detail-item i {
-  font-size: 24px;
-  background-color: #a371f7;
+  font-size: 30px;
+  background-color:rgb(17, 17, 17);
   border-radius: 50%;
-  padding: 10px;
+  padding: 15px;
   margin-right: 15px;
 }
 
 .detail-item span {
-  font-size: 1.1rem;
+  font-size: 1.3rem;
 }
 
 /* Responsive Design */
 
-/* Tablets */
-@media (max-width: 768px) {
-  .contact-section {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .form-container,
-  .contact-details {
-      width: 100%;
-      margin: 0;
-      padding: 20px;
-  }
-}
 
 /* Mobile Phones */
-@media (max-width: 480px) {
-  .contact-section {
-      margin: 50px auto;
-      padding: 0 20px;
-  }
-
-  .form-container,
-  .contact-details {
-      width: 100%;
-      margin-top: 30px;
-  }
-
-  .contact-section h1 {
-      font-size: 2rem;
-  }
-
-  .contact-section h2 {
-      font-size: 1.5rem;
-  }
-
-  .submit-btn {
-      width: 100%;
-  }
-}
 
 footer {
   background-color: #070707;
@@ -1213,7 +1028,7 @@ footer {
   color: #fff;
   margin: 0 15px;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 1.2em;
 }
 
 .footer-links a:hover {
@@ -1221,29 +1036,315 @@ footer {
 }
 
 .footer-icons {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
-.footer-icons a img {
+.footer-icons a i{
   width: 30px;
+  font-size: 1.8em;
   margin: 0 10px;
-  filter: brightness(0) invert(1);
+  color: silver;
 }
 
-.footer-icons a:hover img {
+.footer-icons a:hover i{
   filter: brightness(1) invert(0);
 }
 
 .footer-copyright {
-  font-size: 14px;
+  font-size: 1.2em;
   color: #ccc;
 }
 
 footer p {
   margin: 5px 0;
 }
+/* mobile responsive */
+/* Navbar Styling for Mobile */
+@media (max-width: 480px) {
+  .navbar {
+    width: 110%;
+    border-bottom: 1px solid silver;
+  }
 
-/* Responsive adjustments */
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 110%;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    backdrop-filter: blur(15px);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .mobile-hire-me a i {
+    font-size: 1.3em;
+    padding-right: 8px;
+  }
+
+  /* Checkbox checked state to toggle menu visibility */
+  .menu-toggle:checked + .menu-icon + .nav-links {
+    max-height: 500px;
+  }
+
+  .menu-icon {
+    display: block;
+  }
+
+  .hire-me {
+    display: none;
+  }
+
+  .mobile-hire-me {
+    display: block;
+    text-align: center;
+  }
+
+  .mobile-hire-me a {
+    display: inline-block;
+    padding: 10px 35px;
+    font-size: 18px;
+    background-color: transparent;
+    margin-left: 0;
+  }
+}
+
+/* Logos for Mobile */
+@media (max-width: 480px) {
+  .logos {
+    height: 30px;
+    width: 110%;
+    padding-bottom: 50px;
+  }
+
+  .logos-slide img {
+    height: 60px;
+    margin: 0 20px;
+  }
+
+  .logos:before,
+  .logos:after {
+    height: 110px;
+  }
+}
+
+/* Skill Section for Mobile */
+@media (max-width: 480px) {
+  .skill-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-card {
+    width: auto;
+    margin-right: 0;
+    margin-left: 30px;
+    padding-bottom: 0;
+  }
+  .skill-section h1{
+    padding-bottom: 0;
+  }
+  .skill-card ul li {
+    width: 300px;
+  }
+}
+
+/* Service Cards Styling for Tablets and Mobile */
+@media (max-width: 480px) {
+  .service-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: auto;
+    height: auto;
+    padding: 2rem;
+    margin: 1rem 0;
+    margin-right: 0;
+  }
+
+  .services h2 {
+    font-size: 2rem;
+  }
+
+  .services p {
+    font-size: 1rem;
+  }
+
+  .service-card .icon {
+    font-size: 2.5rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-card p {
+    font-size: 0.9rem;
+  }
+
+  .service-card .read-more {
+    width: 150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+/* Portfolio Section for Tablets and Mobile */
+@media (max-width: 768px) {
+  .portfolio-section {
+    padding: 2rem;
+  }
+
+  .portfolio-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .portfolio-item {
+    width: 100%;
+    max-width: none;
+  }
+
+  .portfolio-content h2 {
+    font-size: 1rem;
+  }
+
+  .tag {
+    font-size: 0.8rem;
+  }
+
+  .external-link i {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-section {
+    padding: 1rem;
+  }
+
+  .portfolio-section h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-item {
+    width: auto;
+    max-width: none;
+  }
+
+  .portfolio-content h2 {
+    font-size: 0.9rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+  }
+
+  .external-link i {
+    font-size: 1.5rem;
+  }
+}
+
+/* General Container and Section Styling */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .section {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .section h2 {
+    font-size: 1.5em;
+  }
+
+  .card {
+    width: auto;
+  }
+
+  .card h3 {
+    font-size: 1em;
+  }
+
+  .title {
+    font-size: 1.2em;
+  }
+}
+
+/* Contact Section for Tablets and Mobile */
+@media (max-width: 768px) {
+  .contact-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-container,
+  .contact-details {
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    margin: 50px auto;
+    padding: 0 20px;
+  }
+
+  .form-container,
+  .contact-details {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .contact-section h1 {
+    font-size: 2rem;
+  }
+
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+
+  .detail-item span {
+    font-size: 1rem;
+  }
+}
+
+/* Footer Styling for Tablets and Mobile */
 @media (max-width: 768px) {
   footer {
     padding: 30px 0;
@@ -1289,9 +1390,9 @@ footer p {
   }
 
   .footer-icons a {
-    font-size: 25px;
+    font-size: 15px;
     color: #d3d3d3;
-    margin: 0 8px;
+    margin: 0px;
   }
 
   .footer-copyright {
@@ -1299,96 +1400,42 @@ footer p {
   }
 }
 
+/* About Section for Mobile */
 @media (max-width: 480px) {
   .about-section {
     flex-direction: column;
-    /* Stack elements vertically */
     align-items: center;
-    /* Center align */
   }
 
   .about-section .profile-image {
     margin-bottom: 20px;
-    /* Add space between image and text */
   }
 
   .about-section .about-text {
     padding-left: 0;
-    /* Remove left padding on smaller screens */
     text-align: center;
-    /* Center text */
   }
 
   .about-section .about-text .buttons {
-    margin-left: 120px;
+    margin-left: 75px;
   }
-
+  .about-section .about-text h2{
+    font-size: 2em;
+  }
+  .about-section .about-text h3{
+    font-size: 1.1em;
+  }
+  .about-section .about-text p{
+    font-size: 1em;
+  }
   .about-section .profile-image img {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
 }
 
-
-
-
-
-/* nav re */
-@media (max-width:600px) {
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    position: absolute;
-    top: 100px;
-    left: 0;
-    background-color: rgb(28, 28, 28);
-    padding: 0;
-    transition: max-height 0.3s ease-in-out;
-    max-height: 0;
-    overflow: hidden;
-  }
-
-  .nav-links li {
-    margin: 15px 0;
-    text-align: center;
-  }
-
-  .menu-toggle:checked+.menu-icon+.nav-links {
-    display: flex;
-    max-height: 500px;
-  }
-
-  .menu-icon {
-    display: block;
-  }
-
-  /* Hide the desktop version of the 'Hire Me' button */
-  .hire-me {
-    display: none;
-  }
-
-  
-  .mobile-hire-me {
-    display: block;
-    text-align: center;
-  }
-
-  .mobile-hire-me a {
-    display: inline-block;
-    padding: 10px 35px;
-    font-size: 18px;
-    background-color: rgb(17, 17, 17);
-  }
-}
-/* nav res */
-/* hero sec */
-
-/* Media Query for Responsive Design */
+/* Home Section (Hero Section) for Mobile */
 @media (max-width: 480px) {
-
-  /* Stack content and profile picture vertically */
   .home-section {
     flex-direction: column;
     text-align: center;
@@ -1396,63 +1443,17 @@ footer p {
     margin-bottom: 50px;
   }
 
-  /* Profile picture should be at the top */
   .profile-picture {
+    order: -1;
     margin-bottom: 20px;
-    /* Add some space below the image */
   }
 
-  /* Content takes full width in mobile */
   .content {
     max-width: 100%;
   }
 
-  /* Adjust heading and paragraph font sizes for mobile */
-  .content h1 {
-    font-size: 28px;
-  }
-
-  .content .name {
-    font-size: 32px;
-  }
-
-  .content h3 {
-    font-size: 40px;
-  }
-
-  .content p {
-    font-size: 16px;
-  }
-
-  /* Auto-type container size adjustments */
-  .auto-type-container {
-    font-size: 30px;
-  }
-
-  /* Adjust social icons */
-  .social-icons a {
-    font-size: 28px;
-    margin-right: 20px;
-  }
-
-  /* Resize the profile picture for smaller screens */
-  .profile-picture img {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  /* Further reduction of font sizes for very small screens */
-  .content h1 {
-    font-size: 24px;
-
-  }
-
   .content .name {
     font-size: 28px;
-
   }
 
   .content h3 {
@@ -1460,62 +1461,196 @@ footer p {
   }
 
   .content p {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .auto-type-container {
     font-size: 24px;
   }
 
-  .social-icons a {
-    font-size: 24px;
-
+  .social-icons {
+    margin-left: 15px;
+    margin-bottom: 20px;
   }
 
   .profile-picture img {
     width: 250px;
     height: 250px;
-
   }
 }
-/* hero sec */
-/* about sec*/
 
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000cc;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #131313;
+  padding: 30px;
+  width: 600px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.modal-header {
+  text-align: center;
+}
+
+.modal-header img {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid silver;
+}
+
+.modal-header h1 {
+  margin: 10px 0;
+  font-size: 2rem;
+  color: silver;
+}
+
+.modal-header .tech-tags {
+  margin-top: 10px;
+}
+
+.modal-header .tech-tag {
+  background-color: #afb0b627;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.modal-body p {
+  font-size: 1rem;
+  margin: 10px 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.modal-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Updated QR Code styling */
+.qr-code-img {
+  position: absolute;
+  height: 170px;
+  width: 170px;
+  display: inline-block;
+  margin-left: 400px;
+  margin-top: -20px;
+  border-radius: 10px;
+  border: 1px solid silver;
+}
+
+.modal-footer .btn-modal {
+  padding: 13px 23px;
+  background-color: transparent;
+  color: silver;
+  text-decoration: none;
+  border-radius: 5px;
+  margin: 20px;
+  border: 1px solid silver;
+  font-size: 1.1em;
+  display: flex;
+  width: 170px;
+}
+
+.modal-footer .btn-modal img {
+  height: 20px;
+  width: 20px;
+  padding-left: 15px;
+}
+
+.modal-footer .btn-modal:hover {
+  background-color: #434190;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  /* Adjust modal width for tablets */
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  /* Adjust QR Code styling */
+  .qr-code-img {
+    position: static;
+    margin: 0 auto;
+    display: block;
+    height: 140px;
+    width: 140px;
+    margin-top: 20px;
+  }
+
+  /* Adjust button width */
+  .modal-footer .btn-modal {
+    width: 150px;
+  }
+}
 
 @media (max-width: 480px) {
-  .about-section {
-    flex-direction: column;
-    /* Stack elements vertically */
-    align-items: center;
-    /* Center align */
+  /* Adjust modal width for smaller mobile screens */
+  .modal-content {
+    width: 95%;
+    padding: 15px;
   }
 
-  .about-section .profile-image {
-    margin-bottom: 20px;
-    /* Add space between image and text */
+  /* Adjust heading size */
+  .modal-header h1 {
+    font-size: 1.5rem;
   }
 
-  .about-section .about-text {
-    padding-left: 0;
-    /* Remove left padding on smaller screens */
-    text-align: center;
-    /* Center text */
+  /* Adjust QR Code styling */
+  .qr-code-img {
+    position: static;
+    margin: 0 auto;
+    display: block;
+    height: 120px;
+    width: 120px;
+    margin-top: 15px;
   }
 
+  /* Adjust button styling */
+  .modal-footer .btn-modal {
+    font-size: 1rem;
+    padding: 10px 15px;
+    width: 140px;
+    margin-left: 90px;
+    
+  }
 
-.about-section .about-text h2{
-  font-size: 2.5em;
+  .modal-footer .btn-modal img {
+    height: 18px;
+    width: 18px;
+    padding-left: 10px;
+  }
+
+  /* Adjust padding for mobile */
+  .modal-body p {
+    margin: 5px 10px;
+  }
 }
-  .about-section .about-text .buttons {
-    margin-left: 60px;
-  }
-
-  .about-section .profile-image img {
-    width: 300px;
-    height: 300px;
-  }
-}
-/* about sec */
-
-
-

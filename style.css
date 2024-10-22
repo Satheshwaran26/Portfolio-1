@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  cursor: none;
 }
 
 body {
@@ -46,6 +47,7 @@ html {
 #progress-value:hover {
   color: #989797;
 }
+
 /* scroll to top */
 
 /*  navbar starting */
@@ -62,14 +64,16 @@ html {
 
 .navbar .logo a {
   font-size: 34px;
-  color:rgb(120, 120, 120);
+  color: rgb(120, 120, 120);
   text-decoration: none;
   font-weight: 600;
 }
-.navbar .logo a span{
+
+.navbar .logo a span {
   font-weight: lighter;
-  color:silver;
+  color: silver;
 }
+
 .nav-links {
   display: flex;
   list-style: none;
@@ -121,10 +125,12 @@ html {
   margin-left: 300px;
   transition: background-color 0.2s linear, color 0.2s linear;
 }
-.mobile-hire-me a i{
+
+.mobile-hire-me a i {
   font-size: 1.3em;
   padding-right: 8px;
 }
+
 .mobile-hire-me a:hover {
   background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
   -webkit-background-clip: text;
@@ -185,17 +191,17 @@ html {
 .close-btn {
   color: #aaa;
   float: right;
-  font-size: 24px;
+  font-size: 35px;
   font-weight: bold;
   cursor: pointer;
 }
 
 .close-btn:hover {
-  color: black;
+  color: silver;
 }
 
 /* Download button */
-.download-btn {
+.btn {
   background-color: #2e2e2e;
   color: white;
   padding: 10px 20px;
@@ -203,9 +209,11 @@ html {
   font-size: 16px;
   border-radius: 10px;
   text-decoration: none;
+  border: solid 1px #2e2e2e;
+  transition: 0.4s ease-in-out;
 }
 
-.download-btn:hover {
+.btn:hover {
   background-color: #181818;
   border: solid 1px silver;
 }
@@ -305,6 +313,7 @@ html {
 .profile-picture img:hover {
   filter: grayscale(50%);
 }
+
 @keyframes slide {
   from {
     transform: translateX(0);
@@ -470,15 +479,17 @@ html {
   -webkit-text-fill-color: transparent;
   border: 1px solid hwb(0 56% 44% / 0.943);
 }
-.cv-download-btn{
+
+.cv-download-btn {
   background-color: #151414;
-  border: 1px solid #070707; 
+  border: 1px solid #070707;
 }
-.about-section .about-text .buttons .cv-download-btn:hover{
+
+.about-section .about-text .buttons .cv-download-btn:hover {
   background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  border: 1px solid hwb(0 56% 44% / 0.943); 
+  border: 1px solid hwb(0 56% 44% / 0.943);
 }
 
 
@@ -492,28 +503,28 @@ html {
   color: rgb(53, 52, 52);
   font-weight: 500;
 }
+
 /* about ending */
 /* skill page */
 .skills-section {
-    text-align: center;
-    padding: 50px 0;
+  text-align: center;
+  padding: 50px 0;
 }
 
 /* skill page */
-.skills-section
-h1 {
-   font-size: 3rem;
+.skills-section h1 {
+  font-size: 3rem;
   margin-bottom: 0.5rem;
   background: linear-gradient(110deg, rgb(35, 35, 36) 40%, rgba(255, 255, 255, 1) 86%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.skill-container {  
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+.skill-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .hover {
@@ -525,26 +536,27 @@ h1 {
   background-color: #2F2F2F;
   transform: scale(1.1);
 }
+
 .skill-card {
-    background-color:#070707 ;
-    border-radius: 10px;
-    padding: 30px;
-    /* width: 380px;    box-shadow: rgba(75, 74, 74, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #070707;
+  border-radius: 10px;
+  padding: 30px;
+  /* width: 380px;    box-shadow: rgba(75, 74, 74, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     border: 0.5px solid #757575; */
 }
 
 .skill-card h2 {
-    color:silver;
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 0;
-    font-weight: lighter;
-    font-size: 2;
+  color: silver;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 0;
+  font-weight: lighter;
+  font-size: 2;
 }
 
 .skill-card ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
 }
 
 .skill-card ul li {
@@ -566,17 +578,17 @@ h1 {
 }
 
 .skill-card ul li img {
-    width: 40px;
-    height: 40px;
-    padding-left: 10px;
-    margin-right: 15px;
+  width: 40px;
+  height: 40px;
+  padding-left: 10px;
+  margin-right: 15px;
 }
 
 li span {
-    font-size: 18px;
-    color: white;
-    margin-left: 40px;
-    display: flex;
+  font-size: 18px;
+  color: white;
+  margin-left: 40px;
+  display: flex;
 }
 
 /* Responsive Design */
@@ -622,9 +634,11 @@ li span {
   --border-size: 1rem;
   --bg-color: #252525;
   position: relative;
-  background-color:  rgb(17, 17, 17);
-  width: 330px; /* Base width */
-  height: 350px; /* Base height */
+  background-color: rgb(17, 17, 17);
+  width: 330px;
+  /* Base width */
+  height: 350px;
+  /* Base height */
   margin: 2rem;
   border-radius: var(--border-size);
   color: white;
@@ -666,15 +680,15 @@ li span {
 /* Inner inset styling */
 .service-card::after {
   --inset: 0.5rem;
-  background-color:#070707;
+  background-color: #070707;
   inset: var(--inset);
   border-radius: calc(var(--border-size) - var(--inset));
   z-index: -1;
   transition: all 0.35s linear;
 }
-.service-card::after:hover{
-  
-}
+
+.service-card::after:hover {}
+
 /* Icon inside the service card */
 .service-card .icon {
   font-size: 3rem;
@@ -702,7 +716,7 @@ li span {
 .service-card .read-more {
   text-decoration: none;
   color: white;
-  background-color: #070707 ;
+  background-color: #070707;
   font-weight: lighter;
   margin-top: 1rem;
   padding: 15px;
@@ -731,8 +745,8 @@ li span {
 
 .portfolio-section h1 {
   font-size: 3rem;
- color: rgb(148, 147, 147);
- margin-bottom: 40px;
+  color: rgb(148, 147, 147);
+  margin-bottom: 40px;
 }
 
 .portfolio-grid {
@@ -777,8 +791,9 @@ li span {
 }
 
 .portfolio-content h2 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 /* Tags styling */
@@ -788,11 +803,12 @@ li span {
 }
 
 .tag {
-  background-color: #888787a2;
+
+  background-color: #888787a4;
   border-radius: 5px;
   padding: 0.2rem 0.5rem;
   font-size: 0.9rem;
-  color: #111111;
+  color: #000000;
   margin-top: 10px;
 }
 
@@ -841,7 +857,7 @@ li span {
 
 .section h2 {
   font-size: 2em;
-  color: #bfb9c9;
+  color: silver;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
@@ -859,19 +875,25 @@ li span {
   margin-bottom: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
-width: 550px;
+  width: 550px;
+  height: 120px;
 }
 
 .card:hover {
   transform: translateY(-10px);
   background-color: #272627;
 }
+
 .card h3 {
-  color:#cdcdcf;
+  color: rgb(216, 216, 216);
   font-size: 1.2em;
   margin-bottom: 5px;
 }
-
+.card h6{
+  font-size: 18px;
+  color: #999;
+  font-weight: 500;
+}
 .title {
   font-size: 1.5em;
   font-weight: bold;
@@ -886,7 +908,8 @@ width: 550px;
 
 
 
-/*  *//* General Contact Section Styling */
+/*  */
+/* General Contact Section Styling */
 .contact-section {
   width: 80%;
   margin: 70px 60px;
@@ -894,6 +917,7 @@ width: 550px;
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 .contact-section h1 {
   font-size: 3rem;
   text-align: center;
@@ -911,13 +935,14 @@ width: 550px;
   background: none;
   color: inherit;
 }
+
 /* Contact Container Styling */
 .contact-container {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-around;
-  
+
 }
 
 /* Form Container Styling */
@@ -927,7 +952,7 @@ width: 550px;
   border-radius: 15px;
   width: 40%;
   box-sizing: border-box;
-  margin-right:50px;
+  margin-right: 50px;
   margin-left: 150px;
 }
 
@@ -963,7 +988,8 @@ textarea {
 }
 
 textarea {
-  resize: vertical; /* Allows resizing vertically */
+  resize: vertical;
+  /* Allows resizing vertically */
 }
 
 .submit-btn {
@@ -987,7 +1013,7 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
 }
 
 .detail-item {
@@ -998,7 +1024,7 @@ textarea {
 
 .detail-item i {
   font-size: 30px;
-  background-color:rgb(17, 17, 17);
+  background-color: rgb(17, 17, 17);
   border-radius: 50%;
   padding: 15px;
   margin-right: 15px;
@@ -1039,14 +1065,14 @@ footer {
   margin-bottom: 30px;
 }
 
-.footer-icons a i{
+.footer-icons a i {
   width: 30px;
   font-size: 1.8em;
   margin: 0 10px;
   color: silver;
 }
 
-.footer-icons a:hover i{
+.footer-icons a:hover i {
   filter: brightness(1) invert(0);
 }
 
@@ -1058,20 +1084,21 @@ footer {
 footer p {
   margin: 5px 0;
 }
+
 /* mobile responsive */
 /* Navbar Styling for Mobile */
 @media (max-width: 480px) {
   .navbar {
-    width: 110%;
+    width: 100%;
     border-bottom: 1px solid silver;
   }
 
   .nav-links {
     display: flex;
     flex-direction: column;
-    width: 110%;
+    width: 100%;
     position: absolute;
-    top: 110px;
+    top: 100px;
     left: 0;
     backdrop-filter: blur(15px);
     padding: 0;
@@ -1092,7 +1119,7 @@ footer p {
   }
 
   /* Checkbox checked state to toggle menu visibility */
-  .menu-toggle:checked + .menu-icon + .nav-links {
+  .menu-toggle:checked+.menu-icon+.nav-links {
     max-height: 500px;
   }
 
@@ -1150,9 +1177,11 @@ footer p {
     margin-left: 30px;
     padding-bottom: 0;
   }
-  .skill-section h1{
+
+  .skill-section h1 {
     padding-bottom: 0;
   }
+
   .skill-card ul li {
     width: 300px;
   }
@@ -1419,15 +1448,19 @@ footer p {
   .about-section .about-text .buttons {
     margin-left: 75px;
   }
-  .about-section .about-text h2{
+
+  .about-section .about-text h2 {
     font-size: 2em;
   }
-  .about-section .about-text h3{
+
+  .about-section .about-text h3 {
     font-size: 1.1em;
   }
-  .about-section .about-text p{
+
+  .about-section .about-text p {
     font-size: 1em;
   }
+
   .about-section .profile-image img {
     width: 300px;
     height: 300px;
@@ -1575,7 +1608,9 @@ footer p {
 }
 
 .modal-footer .btn-modal:hover {
-  background-color: #434190;
+  background: linear-gradient(110deg, rgb(35, 35, 36) 0%, rgba(255, 255, 255, 1) 86%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Close Button */
@@ -1590,6 +1625,7 @@ footer p {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
+
   /* Adjust modal width for tablets */
   .modal-content {
     width: 90%;
@@ -1613,6 +1649,7 @@ footer p {
 }
 
 @media (max-width: 480px) {
+
   /* Adjust modal width for smaller mobile screens */
   .modal-content {
     width: 95%;
@@ -1640,7 +1677,7 @@ footer p {
     padding: 10px 15px;
     width: 140px;
     margin-left: 90px;
-    
+
   }
 
   .modal-footer .btn-modal img {
@@ -1653,4 +1690,78 @@ footer p {
   .modal-body p {
     margin: 5px 10px;
   }
+}
+
+.custom-cursor {
+  width: 15px;
+  height: 15px;
+  position: fixed;
+  /* Fixed positioning to avoid bugs with scrolling */
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid silver;
+  /* Silver color */
+  pointer-events: none;
+  /* Ensure the custom cursor doesn't block interaction */
+  transition: transform 0.1s ease;
+  /* Smooth scaling when hovering */
+  z-index: 1000;
+  /* Keep the cursor on top */
+  will-change: transform, top, left;
+  /* Optimized for smooth transitions */
+  transform: translate(-50%, -50%);
+  /* Center the circle on the cursor */
+}
+
+/* Dragging effect */
+.dragging {
+  animation: dragAnimation 0.5s infinite alternate ease-in-out;
+  transform: scale(1.8) translate(-50%, -50%);
+  /* Increase size when dragging */
+}
+
+@keyframes dragAnimation {
+  0% {
+    transform: scale(1.8) translate(-50%, -50%);
+  }
+
+  100% {
+    transform: scale(2) rotate(10deg) translate(-50%, -50%);
+  }
+}
+
+
+
+
+/* Custom scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+  /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #070707;
+  /* Background of the scrollbar track */
+  border-radius: 10px;
+  /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Color of the scrollbar handle */
+  border-radius: 10px;
+  /* Rounded corners for the handle */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Color of the scrollbar handle on hover */
+}
+
+/* Custom scrollbar for Firefox */
+html {
+  scrollbar-width: thin;
+  /* Makes the scrollbar thinner */
+  scrollbar-color: #888 #070707;
+  /* Color of the scrollbar handle and track */
 }

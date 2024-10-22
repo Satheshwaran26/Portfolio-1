@@ -109,28 +109,201 @@ window.addEventListener('click', function(event) {
 
 // 2 nd popup ////
 
-// Get the modal element
-const modal = document.getElementById("popup-modal");
+// // Modal 1: Sky Wings
+const modal1 = document.getElementById("popup-modal-1");
+const openModal1 = document.getElementById("trigger-popup-1");
+const closeModal1 = document.getElementById("close-modal-1");
 
-// Get the open button
-const openModal = document.getElementById("trigger-popup");
-
-// Get the close button
-const closeModal = document.getElementById("close-modal");
-
-// Show modal
-openModal.addEventListener("click", () => {
-  modal.style.display = "flex";
+// Show modal 1
+openModal1.addEventListener("click", () => {
+  modal1.style.display = "flex";
 });
 
-// Hide modal
-closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
+// Hide modal 1
+closeModal1.addEventListener("click", () => {
+  modal1.style.display = "none";
 });
 
-// Hide modal when clicking outside of it
+// Hide modal 1 when clicking outside of it
 window.addEventListener("click", (event) => {
-  if (event.target === modal) {
-    modal.style.display = "none";
+  if (event.target === modal1) {
+    modal1.style.display = "none";
   }
+});
+
+// Modal 2: Portfolio 2
+const modal2 = document.getElementById("popup-modal-2");
+const openModal2 = document.getElementById("trigger-popup-2");
+const closeModal2 = document.getElementById("close-modal-2");
+
+// Show modal 2
+openModal2.addEventListener("click", () => {
+  modal2.style.display = "flex";
+});
+
+// Hide modal 2
+closeModal2.addEventListener("click", () => {
+  modal2.style.display = "none";
+});
+
+// Hide modal 2 when clicking outside of it
+window.addEventListener("click", (event) => {
+  if (event.target === modal2) {
+    modal2.style.display = "none";
+  }
+});
+
+// Modal 2: Portfolio 2
+const modal3 = document.getElementById("popup-modal-3");
+const openModal3 = document.getElementById("trigger-popup-3");
+const closeModal3 = document.getElementById("close-modal-3");
+
+// Show modal 2
+openModal3.addEventListener("click", () => {
+  modal3.style.display = "flex";
+});
+
+// Hide modal 2
+closeModal3.addEventListener("click", () => {
+  modal3.style.display = "none";
+});
+
+// Hide modal 2 when clicking outside of it
+window.addEventListener("click", (event) => {
+  if (event.target === modal3) {
+    modal3.style.display = "none";
+  }
+});
+
+// Modal 2: Portfolio 2
+const modal4 = document.getElementById("popup-modal-4");
+const openModal4 = document.getElementById("trigger-popup-4");
+const closeModal4= document.getElementById("close-modal-4");
+
+// Show modal 2
+openModal4.addEventListener("click", () => {
+  modal4.style.display = "flex";
+});
+
+// Hide modal 2
+closeModal4.addEventListener("click", () => {
+  modal4.style.display = "none";
+});
+
+// Hide modal 2 when clicking outside of it
+window.addEventListener("click", (event) => {
+  if (event.target === modal4) {
+    modal4.style.display = "none";
+  }
+});
+// Repeat similar structure for other modals
+const modal5 = document.getElementById("popup-modal-5");
+const openModal5 = document.getElementById("trigger-popup-5");
+const closeModal5= document.getElementById("close-modal-5");
+
+// Show modal 2
+openModal5.addEventListener("click", () => {
+  modal5.style.display = "flex";
+});
+
+// Hide modal 2
+closeModal5.addEventListener("click", () => {
+  modal5.style.display = "none";
+});
+
+// Hide modal 2 when clicking outside of it
+window.addEventListener("click", (event) => {
+  if (event.target === modal5) {
+    modal5.style.display = "none";
+  }
+});
+const modal6 = document.getElementById("popup-modal-6");
+const openModal6 = document.getElementById("trigger-popup-6");
+const closeModal6= document.getElementById("close-modal-6");
+
+// Show modal 2
+openModal6.addEventListener("click", () => {
+  modal6.style.display = "flex";
+});
+
+// Hide modal 2
+closeModal6.addEventListener("click", () => {
+  modal6.style.display = "none";
+});
+
+// Hide modal 2 when clicking outside of it
+window.addEventListener("click", (event) => {
+  if (event.target === modal6) {
+    modal6.style.display = "none";
+  }
+});
+
+// Create the cursor element and add it to the body
+const cursor = document.createElement('div');
+cursor.classList.add('custom-cursor');
+document.body.appendChild(cursor);
+
+// Update the position of the cursor based on mouse movement
+document.addEventListener('mousemove', (e) => {
+    requestAnimationFrame(() => { // Use requestAnimationFrame for smoother movement
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+    });
+});
+
+// Detect when the user is pressing the mouse button (dragging)
+document.addEventListener('mousedown', () => {
+    cursor.classList.add('dragging'); // Add dragging animation
+});
+
+// Detect when the user releases the mouse button (stops dragging)
+document.addEventListener('mouseup', () => {
+    cursor.classList.remove('dragging'); // Remove dragging animation
+});
+
+// Optional: Add hover effect for interactive elements
+const hoverableElements = document.querySelectorAll('a, button, h1, p');
+hoverableElements.forEach(element => {
+    element.addEventListener('mouseenter', () => {
+        cursor.style.transform = 'scale(1.5) translate(-50%, -50%)';
+    });
+    element.addEventListener('mouseleave', () => {
+        cursor.style.transform = 'scale(1) translate(-50%, -50%)';
+    });
+});
+
+
+
+
+document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+    // Send form data using EmailJS
+    emailjs.sendForm('service_868xcfc', 'template_c8nxuxd', this)
+    .then(function() {
+        alert('Your message has been sent successfully!');
+    }, function(error) {
+        alert('Failed to send the message. Please try again later.');
+        console.log('Error:', error);
+    });
+});
+
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute('href'));
+        const scrollInterval = 25; // The interval in milliseconds
+        const scrollStep = (target.getBoundingClientRect().top + window.scrollY) / 100; // Adjust the scroll step to control speed
+
+        const scroll = setInterval(() => {
+            if (Math.abs(window.scrollY - (target.getBoundingClientRect().top + window.scrollY)) < Math.abs(scrollStep)) {
+                clearInterval(scroll);
+                window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY);
+            } else {
+                window.scrollBy(0, scrollStep);
+            }
+        }, scrollInterval);
+    });
 });

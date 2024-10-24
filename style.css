@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  cursor: none;
+
 }
 
 body {
@@ -11,6 +11,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 html {
@@ -136,6 +137,7 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: background 0.2s linear, -webkit-text-fill-color 0.2s linear;
+  border: 2px solid hwb(0 56% 44% / 0.943);
 }
 
 /* Responsive Navbar for Mobile */
@@ -151,7 +153,6 @@ html {
 }
 
 /* Responsive Navbar Dropdown */
-
 /* Popup Modal Styles */
 .popup {
   display: none;
@@ -164,7 +165,6 @@ html {
   background-color: rgba(0, 0, 0, 0.5);
   justify-content: center;
   align-items: center;
-
 }
 
 .popup-content {
@@ -172,7 +172,6 @@ html {
   padding: 20px;
   border-radius: 10px;
   width: 400px;
-  height: 300px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   color: silver;
@@ -183,9 +182,8 @@ html {
   padding-bottom: 30px;
 }
 
-.popup-content h1 {
-  padding-top: 30px;
-  padding-bottom: 10px;
+.popup-content h1, .popup-content h2 {
+  margin: 10px 0;
 }
 
 .close-btn {
@@ -305,6 +303,7 @@ html {
 .profile-picture img {
   width: 410px;
   height: 410px;
+  padding: 5px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid rgb(129, 129, 130);
@@ -1090,24 +1089,27 @@ footer p {
 @media (max-width: 480px) {
   .navbar {
     width: 100%;
+ box-sizing: border-box;
     border-bottom: 1px solid silver;
   }
 
   .nav-links {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 105%;
     position: absolute;
-    top: 100px;
+    top: 110px;
     left: 0;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(25px);
     padding: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
 
   }
-
+  .nav-links .ani a {
+    color: silver;
+  }
   .nav-links li {
     margin: 15px 0;
     text-align: center;
@@ -1149,7 +1151,7 @@ footer p {
 @media (max-width: 480px) {
   .logos {
     height: 30px;
-    width: 110%;
+    width: 100%;
     padding-bottom: 50px;
   }
 
@@ -1691,7 +1693,6 @@ footer p {
     margin: 5px 10px;
   }
 }
-
 .custom-cursor {
   width: 15px;
   height: 15px;
@@ -1760,8 +1761,48 @@ footer p {
 
 /* Custom scrollbar for Firefox */
 html {
+  border-radius: 50%;
   scrollbar-width: thin;
   /* Makes the scrollbar thinner */
   scrollbar-color: #888 #070707;
   /* Color of the scrollbar handle and track */
+}
+
+
+.custom-cursor {
+  width: 15px;
+  height: 15px;
+  position: fixed;
+  /* Fixed positioning to avoid bugs with scrolling */
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid silver;
+  /* Silver color */
+  pointer-events: none;
+  /* Ensure the custom cursor doesn't block interaction */
+  transition: transform 0.1s ease;
+  /* Smooth scaling when hovering */
+  z-index: 1000;
+  /* Keep the cursor on top */
+  will-change: transform, top, left;
+  /* Optimized for smooth transitions */
+  transform: translate(-50%, -50%);
+  /* Center the circle on the cursor */
+}
+
+/* Dragging effect */
+.dragging {
+  animation: dragAnimation 0.5s infinite alternate ease-in-out;
+  transform: scale(1.8) translate(-50%, -50%);
+  /* Increase size when dragging */
+}
+
+@keyframes dragAnimation {
+  0% {
+    transform: scale(1.8) translate(-50%, -50%);
+  }
+
+  100% {
+    transform: scale(2) rotate(10deg) translate(-50%, -50%);
+  }
 }

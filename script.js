@@ -1,309 +1,182 @@
-//   auto typing txt  //
-var typed = new Typed(".auto-type", {
-    strings: ["Web Developer", "UI/UX Designer", "Front-end-Dev"],
-    typeSpeed: 180,
-    backSpeed: 100,
-    loop: true
+document.addEventListener("DOMContentLoaded", function () {
+  // Auto typing text
+  var typed = new Typed(".auto-type", {
+      strings: ["Web Developer", "UI/UX Designer", "Front-end-Dev"],
+      typeSpeed: 180,
+      backSpeed: 100,
+      loop: true
   });
-//   auto typing txt  //
 
-// scroll to top //
-window.onscroll = () => {
-    sections.forEach(sec => {
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 150;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+  // Sections and nav links for scrolling
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("header nav a");
 
-        if(top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('active');
-                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-            });
-        };
-    });
-};
-// scroll to top //
+  // Scroll to top and active link logic
+  let calcScrollValue = () => {
+      let scrollProgress = document.getElementById("progress");
+      if (!scrollProgress) return; // Check if element exists
 
-// active navbar //
-let calcScrollValue = () => {
-    let scrollProgress = document.getElementById("progress");
-    let progressValue = document.getElementById("progress-value");
-    let pos = document.documentElement.scrollTop;
-    let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrollValue = Math.round((pos * 100) / calcHeight);
-    
-    if (pos > 100) {
-        scrollProgress.style.display = "grid";
-    } else {
-        scrollProgress.style.display = "none";
-    }
-    
-    scrollProgress.addEventListener("click", () => {
-        document.documentElement.scrollTop = 0;
-    });
-    
-    scrollProgress.style.background = `conic-gradient(#BFBDBD ${scrollValue}%,#363635 ${scrollValue}%)`;
-};
+      let pos = document.documentElement.scrollTop;
+      let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      let scrollValue = Math.round((pos * 100) / calcHeight);
 
-window.onscroll = calcScrollValue;
-window.onload = calcScrollValue;
+      // Display scroll progress if scrolled more than 100px
+      if (pos > 100) {
+          scrollProgress.style.display = "grid";
+      } else {
+          scrollProgress.style.display = "none";
+      }
 
+      // Scroll to top when progress bar is clicked
+      scrollProgress.addEventListener("click", () => {
+          document.documentElement.scrollTop = 0;
+      });
 
+      // Update scroll progress style
+      scrollProgress.style.background = `conic-gradient(#BFBDBD ${scrollValue}%,#363635 ${scrollValue}%)`;
 
+      // Active link based on scroll position
+      sections.forEach(sec => {
+          let top = window.scrollY;
+          let offset = sec.offsetTop - 150;
+          let height = sec.offsetHeight;
+          let id = sec.getAttribute('id');
 
-document.querySelectorAll('.filter-btn').forEach(button => {
-    button.addEventListener('click', function() {
-        // Remove 'active' class from all buttons
-        document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
-        
-        // Add 'active' class to the clicked button
-        this.classList.add('active');
-        
-        // Get the filter category
-        const filter = this.getAttribute('data-filter');
-        
-        // Filter the work cards
-        document.querySelectorAll('.work-card').forEach(card => {
-            const category = card.getAttribute('data-category');
-            if (filter === 'all' || category === filter) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-});
+          if (top >= offset && top < offset + height) {
+              navLinks.forEach(link => {
+                  link.classList.remove('active');
+                  let activeLink = document.querySelector('header nav a[href*=' + id + ']');
+                  if (activeLink) activeLink.classList.add('active');
+              });
+          }
+      });
+  };
 
+  // Execute calcScrollValue on scroll and load
+  window.onscroll = calcScrollValue;
+  window.onload = calcScrollValue;
 
+  // Filter Buttons Logic
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const workCards = document.querySelectorAll('.work-card');
+  if (filterButtons.length > 0) {
+      filterButtons.forEach(button => {
+          button.addEventListener('click', function () {
+              filterButtons.forEach(btn => btn.classList.remove('active'));
+              this.classList.add('active');
 
-
-function toggleNavbar() {
-    const navbar = document.querySelector('.navbar');
-    navbar.classList.toggle('active');
+              const filter = this.getAttribute('data-filter');
+              workCards.forEach(card => {
+                  const category = card.getAttribute('data-category');
+                  if (filter === 'all' || category === filter) {
+                      card.style.display = 'block';
+                  } else {
+                      card.style.display = 'none';
+                  }
+              });
+          });
+      });
   }
 
-  
-
-
-
-
-
-// Show popup when the "Download CV" button is clicked
-document.getElementById('showPopupBtn').addEventListener('click', function(event) {
-    event.preventDefault();  // Prevent default anchor behavior
-    document.getElementById('popup').style.display = 'flex';
-});
-
-// Close the popup when the close button is clicked
-document.querySelector('.close-btn').addEventListener('click', function() {
-    document.getElementById('popup').style.display = 'none';
-});
-
-// Close the popup when clicking outside the popup content
-window.addEventListener('click', function(event) {
-    if (event.target == document.getElementById('popup')) {
-        document.getElementById('popup').style.display = 'none';
-    }
-});
-
-// 2 nd popup ////
-
-// // Modal 1: Sky Wings
-const modal1 = document.getElementById("popup-modal-1");
-const openModal1 = document.getElementById("trigger-popup-1");
-const closeModal1 = document.getElementById("close-modal-1");
-
-// Show modal 1
-openModal1.addEventListener("click", () => {
-  modal1.style.display = "flex";
-});
-
-// Hide modal 1
-closeModal1.addEventListener("click", () => {
-  modal1.style.display = "none";
-});
-
-// Hide modal 1 when clicking outside of it
-window.addEventListener("click", (event) => {
-  if (event.target === modal1) {
-    modal1.style.display = "none";
+  // Smooth Scroll to About Section
+  const aboutLink = document.getElementById('about-link');
+  const aboutSection = document.getElementById('about-section');
+  if (aboutLink && aboutSection) {
+      aboutLink.addEventListener('click', function (event) {
+          event.preventDefault();
+          aboutSection.scrollIntoView({
+              behavior: 'smooth'
+          });
+      });
   }
-});
 
-// Modal 2: Portfolio 2
-const modal2 = document.getElementById("popup-modal-2");
-const openModal2 = document.getElementById("trigger-popup-2");
-const closeModal2 = document.getElementById("close-modal-2");
+  // Popup Logic for "Download CV"
+  const popup = document.getElementById('popup');
+  const showPopupBtn = document.getElementById('showPopupBtn');
+  const closeBtn = document.querySelector('.close-btn');
 
-// Show modal 2
-openModal2.addEventListener("click", () => {
-  modal2.style.display = "flex";
-});
+  if (popup && showPopupBtn && closeBtn) {
+      showPopupBtn.addEventListener('click', function (event) {
+          event.preventDefault();
+          popup.style.display = 'flex';
+      });
 
-// Hide modal 2
-closeModal2.addEventListener("click", () => {
-  modal2.style.display = "none";
-});
+      closeBtn.addEventListener('click', function () {
+          popup.style.display = 'none';
+      });
 
-// Hide modal 2 when clicking outside of it
-window.addEventListener("click", (event) => {
-  if (event.target === modal2) {
-    modal2.style.display = "none";
+      window.addEventListener('click', function (event) {
+          if (event.target === popup) {
+              popup.style.display = 'none';
+          }
+      });
   }
-});
 
-// Modal 2: Portfolio 2
-const modal3 = document.getElementById("popup-modal-3");
-const openModal3 = document.getElementById("trigger-popup-3");
-const closeModal3 = document.getElementById("close-modal-3");
+  // Modal Logic for multiple modals
+  const setupModal = (modalId, triggerId, closeId) => {
+      const modal = document.getElementById(modalId);
+      const openModal = document.getElementById(triggerId);
+      const closeModal = document.getElementById(closeId);
 
-// Show modal 2
-openModal3.addEventListener("click", () => {
-  modal3.style.display = "flex";
-});
+      if (modal && openModal && closeModal) {
+          openModal.addEventListener("click", () => {
+              modal.style.display = "flex";
+          });
 
-// Hide modal 2
-closeModal3.addEventListener("click", () => {
-  modal3.style.display = "none";
-});
+          closeModal.addEventListener("click", () => {
+              modal.style.display = "none";
+          });
 
-// Hide modal 2 when clicking outside of it
-window.addEventListener("click", (event) => {
-  if (event.target === modal3) {
-    modal3.style.display = "none";
+          window.addEventListener("click", (event) => {
+              if (event.target === modal) {
+                  modal.style.display = "none";
+              }
+          });
+      }
+  };
+
+  // Setup all modals
+  setupModal("popup-modal-1", "trigger-popup-1", "close-modal-1");
+  setupModal("popup-modal-2", "trigger-popup-2", "close-modal-2");
+  setupModal("popup-modal-3", "trigger-popup-3", "close-modal-3");
+  setupModal("popup-modal-4", "trigger-popup-4", "close-modal-4");
+  setupModal("popup-modal-5", "trigger-popup-5", "close-modal-5");
+  setupModal("popup-modal-6", "trigger-popup-6", "close-modal-6");
+
+  // EmailJS form submission
+  const contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+      contactForm.addEventListener('submit', function (event) {
+          event.preventDefault(); // Prevent the form from submitting the traditional way
+
+          // Send form data using EmailJS
+          emailjs.sendForm('service_868xcfc', 'template_c8nxuxd', this)
+              .then(function () {
+                  alert('Your message has been sent successfully!');
+              }, function (error) {
+                  alert('Failed to send the message. Please try again later.');
+                  console.log('Error:', error);
+              });
+      });
   }
-});
 
-// Modal 2: Portfolio 2
-const modal4 = document.getElementById("popup-modal-4");
-const openModal4 = document.getElementById("trigger-popup-4");
-const closeModal4= document.getElementById("close-modal-4");
+  // Custom smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+          e.preventDefault();
 
-// Show modal 2
-openModal4.addEventListener("click", () => {
-  modal4.style.display = "flex";
-});
+          const target = document.querySelector(this.getAttribute('href'));
+          const scrollInterval = 2; // The interval in milliseconds
+          const scrollStep = (target.getBoundingClientRect().top + window.scrollY) / 100; // Adjust the scroll step to control speed
 
-// Hide modal 2
-closeModal4.addEventListener("click", () => {
-  modal4.style.display = "none";
-});
-
-// Hide modal 2 when clicking outside of it
-window.addEventListener("click", (event) => {
-  if (event.target === modal4) {
-    modal4.style.display = "none";
-  }
-});
-// Repeat similar structure for other modals
-const modal5 = document.getElementById("popup-modal-5");
-const openModal5 = document.getElementById("trigger-popup-5");
-const closeModal5= document.getElementById("close-modal-5");
-
-// Show modal 2
-openModal5.addEventListener("click", () => {
-  modal5.style.display = "flex";
-});
-
-// Hide modal 2
-closeModal5.addEventListener("click", () => {
-  modal5.style.display = "none";
-});
-
-// Hide modal 2 when clicking outside of it
-window.addEventListener("click", (event) => {
-  if (event.target === modal5) {
-    modal5.style.display = "none";
-  }
-});
-const modal6 = document.getElementById("popup-modal-6");
-const openModal6 = document.getElementById("trigger-popup-6");
-const closeModal6= document.getElementById("close-modal-6");
-
-// Show modal 2
-openModal6.addEventListener("click", () => {
-  modal6.style.display = "flex";
-});
-
-// Hide modal 2
-closeModal6.addEventListener("click", () => {
-  modal6.style.display = "none";
-});
-
-// Hide modal 2 when clicking outside of it
-window.addEventListener("click", (event) => {
-  if (event.target === modal6) {
-    modal6.style.display = "none";
-  }
-});
-
-// Create the cursor element and add it to the body
-const cursor = document.createElement('div');
-cursor.classList.add('custom-cursor');
-document.body.appendChild(cursor);
-
-// Update the position of the cursor based on mouse movement
-document.addEventListener('mousemove', (e) => {
-    requestAnimationFrame(() => { // Use requestAnimationFrame for smoother movement
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-    });
-});
-
-// Detect when the user is pressing the mouse button (dragging)
-document.addEventListener('mousedown', () => {
-    cursor.classList.add('dragging'); // Add dragging animation
-});
-
-// Detect when the user releases the mouse button (stops dragging)
-document.addEventListener('mouseup', () => {
-    cursor.classList.remove('dragging'); // Remove dragging animation
-});
-
-// Optional: Add hover effect for interactive elements
-const hoverableElements = document.querySelectorAll('a, button, h1, p');
-hoverableElements.forEach(element => {
-    element.addEventListener('mouseenter', () => {
-        cursor.style.transform = 'scale(1.5) translate(-50%, -50%)';
-    });
-    element.addEventListener('mouseleave', () => {
-        cursor.style.transform = 'scale(1) translate(-50%, -50%)';
-    });
-});
-
-
-
-
-document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting the traditional way
-
-    // Send form data using EmailJS
-    emailjs.sendForm('service_868xcfc', 'template_c8nxuxd', this)
-    .then(function() {
-        alert('Your message has been sent successfully!');
-    }, function(error) {
-        alert('Failed to send the message. Please try again later.');
-        console.log('Error:', error);
-    });
-});
-
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        const target = document.querySelector(this.getAttribute('href'));
-        const scrollInterval = 25; // The interval in milliseconds
-        const scrollStep = (target.getBoundingClientRect().top + window.scrollY) / 100; // Adjust the scroll step to control speed
-
-        const scroll = setInterval(() => {
-            if (Math.abs(window.scrollY - (target.getBoundingClientRect().top + window.scrollY)) < Math.abs(scrollStep)) {
-                clearInterval(scroll);
-                window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY);
-            } else {
-                window.scrollBy(0, scrollStep);
-            }
-        }, scrollInterval);
-    });
+          const scroll = setInterval(() => {
+              if (Math.abs(window.scrollY - (target.getBoundingClientRect().top + window.scrollY)) < Math.abs(scrollStep)) {
+                  clearInterval(scroll);
+                  window.scrollTo(0, target.getBoundingClientRect().top + window.scrollY);
+              } else {
+                  window.scrollBy(0, scrollStep);
+              }
+          }, scrollInterval);
+      });
+  });
 });

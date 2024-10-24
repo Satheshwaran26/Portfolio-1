@@ -1088,7 +1088,7 @@ footer p {
 /* Navbar Styling for Mobile */
 @media (max-width: 480px) {
   .navbar {
-    width: 100%;
+    width: 110%;
  box-sizing: border-box;
     border-bottom: 1px solid silver;
   }

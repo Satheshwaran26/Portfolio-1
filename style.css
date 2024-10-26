@@ -1086,17 +1086,19 @@ footer p {
 
 /* mobile responsive */
 /* Navbar Styling for Mobile */
+/* mobile responsive */
+/* Navbar Styling for Mobile */
 @media (max-width: 480px) {
   .navbar {
-    width: 110%;
- box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
     border-bottom: 1px solid silver;
   }
 
   .nav-links {
     display: flex;
     flex-direction: column;
-    width: 105%;
+    width: 100%;
     position: absolute;
     top: 110px;
     left: 0;
@@ -1105,11 +1107,12 @@ footer p {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
-
   }
+
   .nav-links .ani a {
     color: silver;
   }
+
   .nav-links li {
     margin: 15px 0;
     text-align: center;
@@ -1121,7 +1124,7 @@ footer p {
   }
 
   /* Checkbox checked state to toggle menu visibility */
-  .menu-toggle:checked+.menu-icon+.nav-links {
+  .menu-toggle:checked + .menu-icon + .nav-links {
     max-height: 500px;
   }
 

@@ -1150,25 +1150,6 @@ footer p {
   }
 }
 
-/* Logos for Mobile */
-@media (max-width: 480px) {
-  .logos {
-    height: 30px;
-    width: 100%;
-    padding-bottom: 50px;
-  }
-
-  .logos-slide img {
-    height: 60px;
-    margin: 0 20px;
-  }
-
-  .logos:before,
-  .logos:after {
-    height: 110px;
-  }
-}
-
 /* Skill Section for Mobile */
 @media (max-width: 480px) {
   .skill-container {
@@ -1769,43 +1750,4 @@ html {
   /* Makes the scrollbar thinner */
   scrollbar-color: #888 #070707;
   /* Color of the scrollbar handle and track */
-}
-
-
-.custom-cursor {
-  width: 15px;
-  height: 15px;
-  position: fixed;
-  /* Fixed positioning to avoid bugs with scrolling */
-  border-radius: 50%;
-  background-color: transparent;
-  border: 1px solid silver;
-  /* Silver color */
-  pointer-events: none;
-  /* Ensure the custom cursor doesn't block interaction */
-  transition: transform 0.1s ease;
-  /* Smooth scaling when hovering */
-  z-index: 1000;
-  /* Keep the cursor on top */
-  will-change: transform, top, left;
-  /* Optimized for smooth transitions */
-  transform: translate(-50%, -50%);
-  /* Center the circle on the cursor */
-}
-
-/* Dragging effect */
-.dragging {
-  animation: dragAnimation 0.5s infinite alternate ease-in-out;
-  transform: scale(1.8) translate(-50%, -50%);
-  /* Increase size when dragging */
-}
-
-@keyframes dragAnimation {
-  0% {
-    transform: scale(1.8) translate(-50%, -50%);
-  }
-
-  100% {
-    transform: scale(2) rotate(10deg) translate(-50%, -50%);
-  }
 }
